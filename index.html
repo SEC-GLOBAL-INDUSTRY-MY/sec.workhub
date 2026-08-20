@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- iPhone notched screen and full-screen optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- Makes the webpage look exactly like an App on iPhone -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="WorkHub">
+    
+    <title>SECOV WorkHub</title>
+    
+    <!-- SEC 专属桌面图标 -->
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon-precomposed" href="icon.png">
+    <link rel="icon" type="image/png" href="icon.png">
+    
+    <style>
+        /* 针对 iOS 进行了优化的全屏和刘海屏处理 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #ffffff; /* 确保背景是纯白 */
+            position: fixed; /* 锁定防止 iOS 滚动 */
+        }
+        
+        iframe {
+            border: none;
+            width: 100vw; /* 视口宽度 */
+            height: 100vh; /* 视口高度 */
+            height: -webkit-fill-available; /* 重要的 iOS 兼容性修补 */
+            
+            /* 在 notch 区域下方安全地显示内容 (可选，有些 notch 需要把内容顶上去) */
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-top: env(safe-area-inset-top);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+        }
+    </style>
+</head>
+<body>
+    <!-- 这里已经换成了你真实的 Google Script 长链接 -->
+    <!-- 我们不需要改这个 src，只改它的 allow 属性和 title 属性 -->
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbxC65_KXNM1flbvnldEz1dtSBEU5JzQjH2jsxpFMMw9-WOm0EQii1_lgU4fj7-gUS66/exec" 
+        allow="geolocation; camera; microphone" 
+        title="WorkHub" 
+        loading="lazy"
+        scrolling="no">
+    </iframe>
+</body>
+</html>
